@@ -1,9 +1,11 @@
-import NavBar from "./sections/NavBar";
+import NavBar from "./sections/NavBarSection";
+import OverviewSection from "./sections/OverviewSection";
 
 function App() {
   return (
     <>
       <NavBar />
+      <OverviewSection />
     </>
   );
 }
