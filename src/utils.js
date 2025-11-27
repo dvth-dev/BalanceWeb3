@@ -19,3 +19,17 @@ export function formatTransactionDate(dateStr) {
     return "N/A";
   }
 }
+
+export function formatAddress(addressOrigin, start = 6, end = 4) {
+  if (!addressOrigin) return "";
+
+  if (
+    typeof addressOrigin !== "string" ||
+    !addressOrigin.startsWith("0x") ||
+    addressOrigin.length < 10
+  ) {
+    return addressOrigin;
+  }
+
+  return `${addressOrigin.slice(0, start)}...${addressOrigin.slice(-end)}`;
+}

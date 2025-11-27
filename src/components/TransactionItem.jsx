@@ -10,8 +10,6 @@ const TransactionItem = ({ hash, amount, token, date, status }) => {
     pending: "tx-pending",
   };
 
-  console.log(statusMap[status]);
-
   return (
     <tr key={hash} className="data-row">
       <td className="text-text">
