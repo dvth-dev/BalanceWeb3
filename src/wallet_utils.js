@@ -16,11 +16,11 @@ export async function ConnectWallet() {
     console.log("🚀 - connectWallet - error:", error);
   }
 }
+
 export async function checkWalletConnected() {
   const accounts = await window.ethereum.request({
     method: "eth_accounts",
   });
-  console.log("🚀 - checkWalletConnected - accounts:", accounts);
 
   return accounts.length > 0 ? accounts[0] : null;
 }

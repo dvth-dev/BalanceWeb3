@@ -3,7 +3,7 @@ import { ConnectWallet } from "../wallet_utils";
 import { useAppContext } from "../contexts/AppContext";
 import { formatAddress } from "../utils.js";
 const BalanceCard = () => {
-  const { address, setAddress } = useAppContext();
+  const { address, setAddress, balance, isLoading } = useAppContext();
 
   const handleConnectWallet = async () => {
     if (address) {
@@ -17,13 +17,21 @@ const BalanceCard = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex bg-card rounded-full border border-card-border">
+        <p className="text-lg font-medium p-3 cursor-pointer">Loading...</p>
+      </div>
+    );
+  }
+
   if (!address) {
     return (
       <div
         className="flex bg-card rounded-full border border-card-border"
         onClick={handleConnectWallet}
       >
-        <p className="text-lg font-medium p-3">Connect Wallet</p>
+        <p className="text-lg font-medium p-3 cursor-pointer">Connect Wallet</p>
       </div>
     );
   }
@@ -33,7 +41,9 @@ const BalanceCard = () => {
       className="flex bg-card rounded-full border border-card-border"
       onClick={handleConnectWallet}
     >
-      <div className="p-3 border-r border-card-border text-lg">1.25 ETH</div>
+      <div className="p-3 border-r border-card-border text-lg">
+        {balance} ETH
+      </div>
 
       <div className="flex p-3 gap-3">
         <p className="text-lg font-medium">{formatAddress(address)}</p>
