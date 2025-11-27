@@ -3,7 +3,7 @@ import OverviewCard from "../components/OverviewCard";
 
 const OverviewSection = () => {
   return (
-    <div>
+    <section id="overview-section">
       <div className="my-12 text-3xl font-bold">Dashboard Overview</div>
       <div className="flex w-full gap-6">
         <OverviewCard
@@ -19,7 +19,7 @@ const OverviewSection = () => {
 
         <OverviewCard title={"24h Volume"} number={5789.12} percentage={-5.2} />
       </div>
-    </div>
+    </section>
   );
 };
 

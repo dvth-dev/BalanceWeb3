@@ -35,3 +35,34 @@
   --color-card: #1f1f2e;
   --color-card-border: #494953;
 }
+
+@layer components {
+  .data-row > td > div {
+    @apply my-6 mx-4 text-lg;
+  }
+
+  .data-row:not(:last-child) > td {
+    @apply border-b border-card-border;
+  }
+
+  .table-header > th {
+    @apply w-1/10;
+  }
+  .table-header > th:nth-child(3) {
+    @apply w-1/6;
+  }
+}
+
+@layer utilities {
+  .tx-success {
+    @apply bg-success/10 my-4 text-center rounded-full text-sm text-success py-1.5 capitalize;
+  }
+
+  .tx-failed {
+    @apply bg-failed/10 my-4 text-center rounded-full text-sm text-failed py-1.5 capitalize;
+  }
+
+  .tx-pending {
+    @apply bg-pending/10 my-4 text-center rounded-full text-sm text-pending py-1.5 capitalize;
+  }
+}

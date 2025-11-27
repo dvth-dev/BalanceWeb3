@@ -4,7 +4,7 @@ import { NavBarItems } from "../contains";
 import BalanceCard from "../components/BalanceCard";
 const NavBar = () => {
   return (
-    <section id="navbar">
+    <section id="navbar-section">
       <div className="mt-8 flex justify-between items-center">
         {/* Logo */}
 
